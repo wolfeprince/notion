@@ -1,34 +1,21 @@
-<div class="calculator">
-  <div class="input" id="input"></div>
-  <div class="buttons">
-    <div class="operators">
-      <div>+</div>
-      <div>-</div>
-      <div>&times;</div>
-      <div>&divide;</div>
-    </div>
-    <div class="leftPanel">
-      <div class="numbers">
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
+<div ng-app="appleCalculator">
+  <div class="calculator" ng-controller="Calculator">
+    <input class="readout" type='readonly' disabled ng-model="console">
+    <div class="keys">
+      <div class="row">
+        <button class="key misc" ng-click="clearTotal()">C</button>
+        <button class="key misc" ng-click="changePositivity()"><sup>+</sup>/<sub>−</sub></button>
+        <button class="key misc" ng-click="getPercentage()">%</button>
+        <button class="key function" ng-click="divide()">÷</button>   
       </div>
-      <div class="numbers">
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
+      <div class="row">
+        <button class="key numeric" ng-click="print(7)">7</button>
+        <button class="key numeric" ng-click="print(8)">8</button>
+        <button class="key numeric" ng-click="print(9)">9</button>
+        <button class="key function" ng-click="multiply()">×</button>
       </div>
-      <div class="numbers">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-      </div>
-      <div class="numbers">
-        <div>0</div>
-        <div>.</div>
-        <div id="clear">C</div>
-      </div>
-    </div>
-    <div class="equal" id="result">=</div>
-  </div>
-</div>
+      <div class="row">
+        <button class="key numeric" ng-click="print(4)">4</button>
+        <button class="key numeric" ng-click="print(5)">5</button>
+        <button class="key numeric" ng-click="print(6)">6</button>
+        <button class="key function" ng-click="subtract()">−</button>
